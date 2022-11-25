@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
     public bool isGameRunning = false;
-    public Text countdown;
+    public TMP_Text countdown;
     public GameObject startButton;
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
+        print("hello");
         startButton.SetActive(false);
         StartCoroutine(StartCountdown());
     }
