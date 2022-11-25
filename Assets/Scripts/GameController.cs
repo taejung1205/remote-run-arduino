@@ -1,31 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class GameController : MonoBehaviour
 {
     public bool isGameRunning = false;
+
+    public bool isUsingArduino = false;
+
     public TMP_Text countdown;
+
     public GameObject startButton;
 
     // Start is called before the first frame update
     void Start()
     {
         countdown.text = "";
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void StartGame()
     {
-        print("hello");
         startButton.SetActive(false);
         StartCoroutine(StartCountdown());
     }
