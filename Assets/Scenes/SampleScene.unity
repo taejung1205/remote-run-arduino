@@ -1235,8 +1235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc5f48af2cffd747a079fe8c632e2c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: /dev/cu.usbmodem21201
-  baudRate: 0
+  portName: /dev/tty.usbmodem21201
+  baudRate: 9600
   messageListener: {fileID: 1211831302}
   reconnectionDelay: 1000
   maxUnreadMessages: 1
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211831302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f1cfc67bea1b4d2d9188aa3523dac74, type: 3}
+  m_Script: {fileID: 11500000, guid: f299c52386e3e416bb25823b04d0fd57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1238673176 stripped
