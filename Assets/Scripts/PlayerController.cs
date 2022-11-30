@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
                 new Vector3(6.5f, 0, 0) * Time.deltaTime;
 
             if (!gameController.isUsingArduino)
+            {
                 if (Input.GetKey(KeyCode.A))
                 {
                     playerTransform.position +=
@@ -36,6 +37,10 @@ public class PlayerController : MonoBehaviour
                     playerTransform.position +=
                         new Vector3(0, 0, -2f) * Time.deltaTime;
                 }
+            } else
+            {
+
+            }
         }
     }
 }

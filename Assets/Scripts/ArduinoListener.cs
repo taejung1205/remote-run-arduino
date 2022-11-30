@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,10 @@ public class ArduinoListener : MonoBehaviour
 
     void OnMessageArrived(string msg)
     {
-        Debug.Log("Arrived: " + msg);
+        string[] distances = msg.Split(' ');
+        int left = Int32.Parse(distances[0]);
+        int right = Int32.Parse(distances[1]);
+        Debug.Log("Left: " + left + " Right: " + right);
     }
 
     // Invoked when a connect/disconnect event occurs. The parameter 'success'
