@@ -156,4 +156,9 @@ public class SerialController : MonoBehaviour
         this.userDefinedTearDownFunction = userFunction;
     }
 
+    public void SetPort(string str)
+    {
+        portName = str;
+    }
+
 }

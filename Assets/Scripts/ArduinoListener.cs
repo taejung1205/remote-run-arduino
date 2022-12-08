@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class ArduinoListener : MonoBehaviour
 {
+
+    public PlayerController MyPlayerController;
+
+    public GameController MyGameController;
+
+
     // Use this for initialization
     void Start()
     {
@@ -19,10 +25,20 @@ public class ArduinoListener : MonoBehaviour
 
     void OnMessageArrived(string msg)
     {
+        Debug.Log(msg);
         string[] distances = msg.Split(' ');
-        int left = Int32.Parse(distances[0]);
-        int right = Int32.Parse(distances[1]);
-        Debug.Log("Left: " + left + " Right: " + right);
+        float left = float.Parse(distances[0]);
+        float right = float.Parse(distances[1]);
+        float result = right - left;
+        if(right < 50 && left < 50)
+        {
+            MyPlayerController.direction = left - right;
+        }
+
+        if(MyGameController.canStart && right < 5 && left < 5)
+        {
+            MyGameController.StartGame();
+        }
     }
 
     // Invoked when a connect/disconnect event occurs. The parameter 'success'
