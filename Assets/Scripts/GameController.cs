@@ -20,6 +20,11 @@ public class GameController : MonoBehaviour
     public GameObject SettingScreen;
     public GameObject StartScreen;
 
+    public AudioSource BGM;
+    public AudioSource CountdownSFX;
+    public AudioSource GameClearSFX;
+    public AudioSource GameOverSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,29 +79,38 @@ public class GameController : MonoBehaviour
     {
         canStart = false;
         CountdownText.text = "3";
+        CountdownSFX.Play();
         yield return new WaitForSeconds(1);
         CountdownText.text = "2";
+        CountdownSFX.Play();
         yield return new WaitForSeconds(1);
         CountdownText.text = "1";
+        CountdownSFX.Play();
         yield return new WaitForSeconds(1);
         CountdownText.text = "";
         isGameRunning = true;
+        BGM.Play();
     }
 
     IEnumerator GameOverProcess()
     {
         isGameRunning = false;
+        BGM.Stop();
+        GameOverSFX.Play();
         GameOverText.text = "Game Over...";
         GameOverText.color = Color.grey;
         yield return new WaitForSeconds(2);
         StartingInterface();
         yield return new WaitForSeconds(1);
         canStart = true;
+
     }
 
     IEnumerator GameClearProcess()
     {
         isGameRunning = false;
+        BGM.Stop();
+        GameClearSFX.Play();
         GameOverText.text = "Game Clear!!";
         GameOverText.color = Color.cyan;
         yield return new WaitForSeconds(4);
