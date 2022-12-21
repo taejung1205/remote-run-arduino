@@ -30,6 +30,11 @@
 
 - 기타 고정용 도구
 
+**아두이노 회로 설계도**
+
+![image](https://user-images.githubusercontent.com/15320150/208814243-e18a2300-8a07-4bc5-9f1a-e8a4d8b6728e.png)
+
+
 **유의사항**
 
 해당 게임의 조작은 아두이노를 통해 이루어집니다. RemoteRunArduino 디렉토리에 있는 아두이노 코드를 탑재한 적용시킨 장치를 PC에 연결해야 작동이 가능합니다. 
